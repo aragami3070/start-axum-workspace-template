@@ -1,6 +1,6 @@
 [workspace]
 resolver = "2"
-members = ["app", "frontend", "server"]
+members = ["app", "frontend", "server", "share"]
 
 # need to be applied only to wasm build
 [profile.release]
@@ -9,9 +9,11 @@ lto = true
 opt-level = 'z'
 
 [workspace.dependencies]
-leptos = { version = "0.8.2"{% if nightly == "Yes" %}, features = ["nightly"]{% endif %} }
+leptos = { version = "0.8.2"}
+# leptos = { version = "0.8.2"{% if nightly == "Yes" %}, features = ["nightly"]{% endif %} }
 leptos_meta = { version = "0.8.2" }
-leptos_router = { version = "0.8.2"{% if nightly == "Yes" %}, features = ["nightly"]{% endif %} }
+leptos_router = { version = "0.8.2" }
+# leptos_router = { version = "0.8.2"{% if nightly == "Yes" %}, features = ["nightly"]{% endif %} }
 leptos_axum = { version = "0.8.2" }
 
 axum = "0.8.4"
